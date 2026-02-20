@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitema de Nómina Pro</title>
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center border-b-2 border-blue-500 pb-2">
+            Gestión de Nómina
+        </h1>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg mb-8 flex flex-wrap gap-4 items-end">
+            <div class="flex-1">
+                <label class="block text-sm font-medium text-gray-700">Nombre Empleado</label>
+                <input type="text" id="nombre" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border"
+                    placeholder="Ej: Marcos">
+            </div>
+
+            <div class="w-32">
+                <label class="block text-sm font-medium text-gray-700">Horas</label>
+                <input type="number" id="horas"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border">
+            </div>
+
+            <div class="w-40">
+                <label class="block text-sm font-medium text-gray-700">Categoría</label>
+                <select id="categoria" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border">
+                    <option value="junior">Junior</option>
+                    <option value="senior">Senior</option>
+                </select>
+            </div>
+
+            <button id="btnAgregar"
+                class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors font-bold">
+                AÑADIR +
+            </button>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Empleado</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Categoría</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Horas trabajadas</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Pago/hr</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Sueldo</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaCuerpo" class="divide-y divide-gray-200">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
