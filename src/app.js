@@ -8,16 +8,21 @@ let listaEmpleados = [];
 
 
 const renderizarTabla = () => {
-    
     table.innerHTML = "";
+
+    const formateador = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
     listaEmpleados.forEach((emp,index) => {
         table.innerHTML += `
         <tr class="hover:bg-gray-50 transition-colors">
         <td class="px-6 py-4">${emp.nombre}</td>
         <td class="px-6 py-4 uppercase text-xs font-bold text-gray-500">${emp.categoria}</td>
         <td class="px-6 py-4 uppercase font-bold text-orange-500">${emp.horas} horas</td>
-        <td class="px-6 py-4 uppercase font-bold text-green-500">$${emp.pagohr}</td>
-        <td class="px-6 py-4 font-bold text-sm text-green-600">$${emp.sueldo}</td>
+        <td class="px-6 py-4 uppercase font-bold text-green-500">${formateador.format(emp.pagohr)}</td>
+        <td class="px-6 py-4 font-bold text-sm text-green-600">${formateador.format(emp.sueldo)}</td>
         <td class="px-6 py-4">
         <button onclick="borrarEmpleado(${index})" class="text-red-500 hover:text-red-700 cursor-pointer" id ="btnEliminar">Eliminar</button>
         </td>
@@ -33,6 +38,24 @@ window.borrarEmpleado = (index) => {
 
 
 btn.addEventListener('click', () => {
+    const nombreInput = document.querySelector("#nombre");
+    const horasInput = document.querySelector("#horas");
+
+    nombreInput.classList.remove("border-red-500", "bg-red-50");
+    horasInput.classList.remove("border-red-500", "bg-red-50");
+
+    if (nombreInput.value.trim().length < 3) {
+        nombreInput.classList.add("border-red-500", "bg-red-50");
+        nombreInput.focus();
+        return
+    }
+
+    if (Number(horasInput.value) <= 0) {
+        horasInput.classList.add("border-red-500", "bg-red-50");
+        horasInput.focus();
+        return;
+    }
+
     const nombreValor = nombre.value;
     const horasValor = hours.value;
     const categoriaValor = categ.value;

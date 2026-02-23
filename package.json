@@ -1,25 +1,14 @@
 {
-  "name": "app-nomina",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "app-nomina-js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind": "npx @tailwindcss/cli -i ./css/styles.css -o ./css/output.css --watch"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soylizardev/app-nomina-js.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/soylizardev/app-nomina-js/issues"
-  },
-  "homepage": "https://github.com/soylizardev/app-nomina-js#readme",
   "devDependencies": {
-    "tailwindcss": "^4.2.0"
+    "vite": "^7.3.1"
   }
 }
