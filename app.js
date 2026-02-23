@@ -37,7 +37,7 @@ btn.addEventListener('click', () => {
     const horasValor = hours.value;
     const categoriaValor = categ.value;
     
-    const pagoHora = +categoriaValor === "senior" ? 20 : 10;
+    const pagoHora = categoriaValor === "senior" ? 20 : 10;
     const sueldoCalculado = horasValor * pagoHora;
     
     const nuevoEmpleado = {
